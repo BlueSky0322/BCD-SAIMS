@@ -26,7 +26,7 @@ public class KeyAccess {
         //check if the public key file exists and contains data
         if (keyBytes.length < 1) {
             //if no, create new key pair
-            MyKeyPair.create();
+            KeyGenerator.create();
             keyBytes = Files.readAllBytes(Paths.get(Utils.FilePaths.getPbcKeyPath()));
         }
         X509EncodedKeySpec keySpec = new X509EncodedKeySpec(keyBytes);
@@ -38,7 +38,7 @@ public class KeyAccess {
         //check if the public key file exists and contains data
         if (keyBytes.length < 1) {
             //if no, create new key pair
-            MyKeyPair.create();
+            KeyGenerator.create();
             keyBytes = Files.readAllBytes(Paths.get(Utils.FilePaths.getPvtKeyPath()));
         }
         PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(keyBytes);
