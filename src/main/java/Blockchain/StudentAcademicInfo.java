@@ -9,8 +9,8 @@ import ContentData.*;
 
 public class StudentAcademicInfo implements Serializable {
 
-    public static final int SIZE = 10;
-    public String merkleRoot;
+    public static final int SIZE = 30;
+    public String merkleRoot = "0";
     private List<String> hashList = new ArrayList<>();
 
     public StudentAcademicInfo() {
@@ -21,26 +21,31 @@ public class StudentAcademicInfo implements Serializable {
         return merkleRoot;
     }
 
-    public void buildAndSetMerkleRoot(List<Quintet<PersonalInfo, Transcript, GraduationCert, OutstandingPayments, Payments>> recordList) {
+    public void buildAndSetMerkleRoot(List<Quintet<PersonalInfo, AcademicTranscript, GraduationCert, OutstandingPayments, TuitionPayments>> recordList) {
+        //System.out.println("Begin get instance");
         MerkleTree mt = MerkleTree.getInstance(recordList);
+        //System.out.println("Begin build");
         mt.build();
         this.merkleRoot = mt.getMerkleRoot();
         this.hashList = mt.getRecordHashList();
     }
-    
-    private List<Quintet<PersonalInfo, Transcript, GraduationCert, OutstandingPayments, Payments>> recordList;
 
-    public List<Quintet<PersonalInfo, Transcript, GraduationCert, OutstandingPayments, Payments>> getRecordList() {
+    private List<Quintet<PersonalInfo, AcademicTranscript, GraduationCert, OutstandingPayments, TuitionPayments>> recordList;
+
+    public List<Quintet<PersonalInfo, AcademicTranscript, GraduationCert, OutstandingPayments, TuitionPayments>> getRecordList() {
         return recordList;
     }
 
-    public boolean add(Quintet recordToAdd) {
+    public boolean checkAdd(Quintet recordToAdd) {
         if (recordList.size() != SIZE) {
-            recordList.add(recordToAdd);
-            buildAndSetMerkleRoot(recordList);
             return true;
         }
         return false;
+    }
+
+    public void AddList(Quintet recordToAdd) {
+        recordList.add(recordToAdd);
+        buildAndSetMerkleRoot(recordList);
     }
 
     public List<String> getHashes() {

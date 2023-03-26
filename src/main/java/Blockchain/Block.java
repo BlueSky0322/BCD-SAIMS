@@ -1,6 +1,6 @@
 package Blockchain;
 
-import Utils.GeneralOperation;
+import Utils.Algorithms;
 
 import java.io.ByteArrayOutputStream;
 import java.io.ObjectOutputStream;
@@ -61,21 +61,21 @@ public class Block implements Serializable {
                     + timestamp + "]";
         }
     }
-    private StudentAcademicInfo record;
+    private StudentAcademicInfo studAcaInfo;
 
-    public Block(String prevHash, StudentAcademicInfo record) {
+    public Block(String prevHash, StudentAcademicInfo studAcaInfo) {
         super();
         long now = System.currentTimeMillis();
-        
+
         /* construct part object upon object construction */
         this.blockHeader = new Header();
         this.blockHeader.setPreviousHash(prevHash);
-        this.blockHeader.setTimestamp(now);   
-        
+        this.blockHeader.setTimestamp(now);
+
         //hashing the entire block using Sha256
-        String blockHash = Hashing.hashBlock(getBytes(), GeneralOperation.getSha_Algo());
+        String blockHash = Hashing.hashBlock(getBytes(), Algorithms.AlgoSHA256());
         this.blockHeader.setCurrentHash((blockHash));
-        setRecord(record);
+        setInfo(studAcaInfo);
     }
 
     private byte[] getBytes() {
@@ -83,17 +83,16 @@ public class Block implements Serializable {
             out.writeObject(this);
             return byteStream.toByteArray();
         } catch (Exception e) {
-            System.out.println("Error in Block line 44");
             e.printStackTrace();
             return null;
         }
     }
 
-    private void setRecord(StudentAcademicInfo record) {
-        this.record = record;
+    private void setInfo(StudentAcademicInfo studAcaInfo) {
+        this.studAcaInfo = studAcaInfo;
     }
 
-    public StudentAcademicInfo getRecord() {
-        return record;
+    public StudentAcademicInfo getInfo() {
+        return studAcaInfo;
     }
 }
