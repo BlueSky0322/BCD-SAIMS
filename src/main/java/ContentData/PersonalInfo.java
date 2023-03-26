@@ -1,7 +1,7 @@
 package ContentData;
 
-import Enum.MaritalStatus;
-import Enum.Gender;
+import Utils.MaritalStatus;
+import Utils.Gender;
 import java.io.Serializable;
 import java.util.Random;
 
@@ -71,20 +71,34 @@ public class PersonalInfo implements Serializable {
     }
 
     //used to generate random data
-    public PersonalInfo(String name, String ID) {
+    public PersonalInfo(String ID) {
         this.studID = ID;
-        this.studName = name;
+        this.studName = "Student " + ID;
+        
+        // randomly assign gender
         Random random = new Random();
         if (random.nextInt(2) == 1) {
             studGender = Gender.MALE;
         } else {
             studGender = Gender.FEMALE;
         }
-        studContactNo = "111";
-        studAddress = "PJ";
-        studEmail = "johndoe123@email.com";
+        
+        // generate a random 10 digit Malaysian phone number
+        StringBuilder sb = new StringBuilder();
+        sb.append("01");
+        for (int i = 0; i < 8; i++) {
+            sb.append(random.nextInt(10));
+        }
+        studContactNo = sb.toString();
+        
+        //randomly assign address
+        String[] klDistricts = {"Cheras", "Kepong", "Segambut", "Setapak", "Wangsa Maju"};
+        studAddress = klDistricts[random.nextInt(klDistricts.length)];
+        
+        studEmail = ID + "@gmail.com";
         studDOB = "22/3/23";
-
+        
+        // randomly assign marital status
         if (random.nextInt(2) == 1) {
             studMaritalStat = MaritalStatus.MARRIED;
         } else {
@@ -95,7 +109,7 @@ public class PersonalInfo implements Serializable {
     @Override
     public String toString() {
         return "\n==------------== Student Information ==------------=="
-                + "ID: '" + studID + '\''
+                + "\nID: '" + studID + '\''
                 + "\nName: '" + studName + '\''
                 + "\nGender: " + studGender
                 + "\nContact No.: '" + studContactNo + '\''

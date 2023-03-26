@@ -35,9 +35,9 @@ public class GraduationCert implements Serializable {
     @Override
     public String toString() {
         return "\n==------------== Graduation Certificate ==------------=="
-                + "Degree Type: '" + CGPA + '\''
-                + "\nClass Honours: '" + degreeType + '\''
-                + "\nCGPA: '" + classHonours + '\''
+                + "\nDegree Type: '" + degreeType + '\''
+                + "\nClass Honours: '" + classHonours + '\''
+                + "\nCGPA: '" + CGPA + '\''
                 + "\n";
     }
     
