@@ -1,16 +1,16 @@
 package Cryptography;
 
+import Utils.Algorithms;
 import javax.crypto.Cipher;
-import java.security.Key;
 import java.security.PrivateKey;
 import java.security.PublicKey;
 
-public abstract class CipherInterface { //this one done
+public abstract class CipherInterface { 
 
     protected Cipher cipher;
 
     public CipherInterface() {
-        this(Utils.GeneralOperation.getRsa_Algo());
+        this(Algorithms.AlgoRSA());
     }
 
     public CipherInterface(String algo) {
@@ -22,6 +22,5 @@ public abstract class CipherInterface { //this one done
     }
 
     public abstract String encrypt(String data, PublicKey key) throws Exception;
-
     public abstract String decrypt(String cipherText, PrivateKey key) throws Exception;
 }
