@@ -32,7 +32,7 @@ public class KeyGenerator {
 
     public KeyGenerator() {
         try {
-            keyGen = KeyPairGenerator.getInstance(Utils.GeneralOperation.getRsa_Algo());
+            keyGen = KeyPairGenerator.getInstance(Utils.Algorithms.AlgoRSA());
             keyGen.initialize(1024);
         } catch (Exception e) {
             e.printStackTrace();

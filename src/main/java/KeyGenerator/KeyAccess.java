@@ -4,6 +4,8 @@
  */
 package KeyGenerator;
 
+import Utils.FilePaths;
+import Utils.Algorithms;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -21,20 +23,20 @@ import java.security.spec.X509EncodedKeySpec;
  */
 public class KeyAccess {
 
-    public static PublicKey getPublicKey(String path) throws IOException, NoSuchAlgorithmException, InvalidKeySpecException {
-        byte[] keyBytes = Files.readAllBytes(Paths.get(Utils.FilePaths.getPbcKeyPath()));
+    public static PublicKey getPublicKey() throws IOException, NoSuchAlgorithmException, InvalidKeySpecException {
+        byte[] keyBytes = Files.readAllBytes(Paths.get(FilePaths.getPbcKeyPath()));
         //check if the public key file exists and contains data
         if (keyBytes.length < 1) {
             //if no, create new key pair
             KeyGenerator.create();
-            keyBytes = Files.readAllBytes(Paths.get(Utils.FilePaths.getPbcKeyPath()));
+            keyBytes = Files.readAllBytes(Paths.get(FilePaths.getPbcKeyPath()));
         }
         X509EncodedKeySpec keySpec = new X509EncodedKeySpec(keyBytes);
-        return KeyFactory.getInstance(Utils.GeneralOperation.getRsa_Algo()).generatePublic(keySpec);
+        return KeyFactory.getInstance(Utils.Algorithms.AlgoRSA()).generatePublic(keySpec);
     }
 
-    public static PrivateKey getPrivateKey(String path) throws IOException, NoSuchAlgorithmException, InvalidKeySpecException {
-        byte[] keyBytes = Files.readAllBytes(Paths.get(Utils.FilePaths.getPvtKeyPath()));
+    public static PrivateKey getPrivateKey() throws IOException, NoSuchAlgorithmException, InvalidKeySpecException {
+        byte[] keyBytes = Files.readAllBytes(Paths.get(FilePaths.getPvtKeyPath()));
         //check if the public key file exists and contains data
         if (keyBytes.length < 1) {
             //if no, create new key pair
@@ -42,6 +44,6 @@ public class KeyAccess {
             keyBytes = Files.readAllBytes(Paths.get(Utils.FilePaths.getPvtKeyPath()));
         }
         PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(keyBytes);
-        return KeyFactory.getInstance(Utils.GeneralOperation.getRsa_Algo()).generatePrivate(keySpec);
+        return KeyFactory.getInstance(Algorithms.AlgoRSA()).generatePrivate(keySpec);
     }
 }
