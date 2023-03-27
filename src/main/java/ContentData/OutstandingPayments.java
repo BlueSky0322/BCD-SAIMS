@@ -42,8 +42,10 @@ public class OutstandingPayments implements Serializable {
     @Override
     public String toString() {
         if (amountUnpaid != 0) {
-            return "You have outstanding payments: RM" + amountUnpaid + "\nPlease make the outstanding payment before: " + paymentDeadline + "\n";
+            return "\n==------------== Outstanding Payments ==------------=="
+                    + "\nYou have outstanding payments: RM" + amountUnpaid + "\nPlease make the outstanding payment before: " + paymentDeadline + "\n";
         }
-        return "You have no outstanding payments. Good Job!";
+        return "\n==------------== Outstanding Payments ==------------=="
+                + "\nYou have no outstanding payments. Good Job!";
     }
 }
