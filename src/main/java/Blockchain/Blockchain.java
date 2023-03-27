@@ -29,22 +29,24 @@ public class Blockchain {
     private Blockchain(String chainFile) {
         super();
         this.chainFile = chainFile;
+        System.out.println(">> Blockchain object is created!");
     }
 
-    public static void genesis(StudentAcademicInfo studAcaInfo) {
-        Block genesis = new Block("0", studAcaInfo);
+    public void genesis() {
+        Block genesis = new Block("0", null);
         db.add(genesis);
-        Blockchain.presist();
-        Blockchain.distribute();
+        persist();
+        distribute();
     }
 
-    public static void nextBlock(Block newBlock) {
-        db = Blockchain.getChain();
+    public void nextBlock(Block newBlock) {
+        db = getChain();
+        newBlock.getBlockHeader().setIndex(db.getLast().getBlockHeader().getIndex() + 1);
         db.add(newBlock);
-        Blockchain.presist();
+        persist();
     }
 
-    public static LinkedList<Block> getChain() {
+    public LinkedList<Block> getChain() {
         try (FileInputStream fis = new FileInputStream(chainFile); ObjectInputStream in = new ObjectInputStream(fis);) {
             return (LinkedList<Block>) in.readObject();
         } catch (Exception e) {
@@ -53,7 +55,7 @@ public class Blockchain {
         }
     }
 
-    public static void presist() {
+    public static void persist() {
         try (FileOutputStream fos = new FileOutputStream(chainFile); ObjectOutputStream out = new ObjectOutputStream(fos);) {
             out.writeObject(db);
             System.out.println(">> Master file updated");
@@ -64,7 +66,7 @@ public class Blockchain {
 
     public static void distribute() {
         //convert chain to string using API
-        String chain = new GsonBuilder().setPrettyPrinting().create().toJson(Blockchain.getChain());
+        String chain = new GsonBuilder().setPrettyPrinting().create().toJson(db);
         System.out.println(chain);
         try {
             Files.write(Paths.get(ledgerFile), chain.getBytes(), StandardOpenOption.CREATE);
