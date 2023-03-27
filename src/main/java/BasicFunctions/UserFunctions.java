@@ -2,7 +2,7 @@ package BasicFunctions;
 
 import Blockchain.Block;
 import Blockchain.Blockchain;
-import Blockchain.StudentAcademicInfo;
+import Blockchain.AcademicInfoTranx;
 import ContentData.AcademicTranscript;
 import ContentData.GraduationCert;
 import ContentData.OutstandingPayments;
@@ -16,56 +16,28 @@ import org.javatuples.Quintet;
 
 public class UserFunctions {
 
-    public static StudentAcademicInfo searchStudAcaInfo(String ID) {
-        boolean hasRecord = false;
-        if (Blockchain.getChain() != null) {
-            List<Block> blocksList = Blockchain.getChain();
-            //AtomicBoolean hasRecord = new AtomicBoolean(false);
+    public static AcademicInfoTranx searchStudAcaInfo(String ID) {
+        Blockchain bc = Blockchain.getInstance(FilePaths.getChainFilePath());
+        //boolean hasRecord = false;
+        if (bc.getChain() != null) {
+            List<Block> blocksList = bc.getChain();
+            boolean genesisBlockSkipped = false;
             for (Block block : blocksList) {
-                StudentAcademicInfo record = block.getInfo();
-                if (!hasRecord) {
-                    hasRecord = studAcaInfoValid(record, ID);
+                if (!genesisBlockSkipped) { // skip the first block
+                    genesisBlockSkipped = true; // set flag to true
+                    continue;
                 }
-                return record;
-            }
-            if (!hasRecord) {
-                return null;
+                AcademicInfoTranx record = block.getInfo();
+//                if (isCorrect(record, bc)) {
+                List<Quintet<PersonalInfo, AcademicTranscript, GraduationCert, OutstandingPayments, TuitionPayments>> studInfoList = record.getRecordList();
+                for (Quintet<PersonalInfo, AcademicTranscript, GraduationCert, OutstandingPayments, TuitionPayments> objects : studInfoList) {
+                    if (objects.getValue0().getID().equals(ID)) {
+                        return record; // return the first instance of the record with matching ID
+                    }
+                }
             }
         }
         return null;
     }
 
-    public static boolean studAcaInfoValid(StudentAcademicInfo studAcaInfo, String ID) {
-        if (isValid(studAcaInfo)) {
-            List<Quintet<PersonalInfo, AcademicTranscript, GraduationCert, OutstandingPayments, TuitionPayments>> studInfoList = studAcaInfo.getRecordList();
-            List<Quintet<PersonalInfo, AcademicTranscript, GraduationCert, OutstandingPayments, TuitionPayments>> validList = new ArrayList<>();
-            for (Quintet<PersonalInfo, AcademicTranscript, GraduationCert, OutstandingPayments, TuitionPayments> objects : studInfoList) {
-                if (objects.getValue0().getID().equals(ID)) {
-                    validList.add(objects);
-                }
-            }
-            if (validList.size() > 0) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private static boolean isValid(StudentAcademicInfo studAcaInfo) {
-        String mekleRoot = studAcaInfo.getMerkleRoot();
-        if (Blockchain.getChain() != null) {
-            List<Block> blocksList = Blockchain.getChain();
-            List<StudentAcademicInfo> studInfoList = new ArrayList<>();
-            for (Block block : blocksList) {
-                StudentAcademicInfo blockRecord = block.getInfo();
-                if (blockRecord.getMerkleRoot().equals(mekleRoot)) {
-                    studInfoList.add(blockRecord);
-                }
-            }
-            if (studInfoList.size() > 0) {
-                return true;
-            }
-        }
-        return false;
-    }
 }
