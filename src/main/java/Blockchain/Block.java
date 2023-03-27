@@ -6,9 +6,11 @@ import java.io.ByteArrayOutputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.Arrays;
 
 public class Block implements Serializable {
 
+    private static final long serialVersionUID = 1L;
     public Header blockHeader;
 
     public Header getBlockHeader() {
@@ -18,16 +20,17 @@ public class Block implements Serializable {
     public class Header implements Serializable {
 
         //data member
-        public int index;
+        private static final long serialVersionUID = 1L;
+        public int blockIndex;
         public String currentHash, previousHash;
         public long timestamp;
 
         public int getIndex() {
-            return index;
+            return blockIndex;
         }
 
         public void setIndex(int index) {
-            this.index = index;
+            blockIndex = index;
         }
 
         public String getCurrentHash() {
@@ -56,14 +59,22 @@ public class Block implements Serializable {
 
         @Override
         public String toString() {
-            return "Header [index= " + index + ", currentHash= "
+            return "Header [index= " + blockIndex + ", currentHash= "
                     + currentHash + ", previousHash= " + previousHash + ", timeStamp= "
                     + timestamp + "]";
         }
     }
-    private StudentAcademicInfo studAcaInfo;
+    public AcademicInfoTranx transaction;
 
-    public Block(String prevHash, StudentAcademicInfo studAcaInfo) {
+    public void setInfo(AcademicInfoTranx transaction) {
+        this.transaction = transaction;
+    }
+
+    public AcademicInfoTranx getInfo() {
+        return transaction;
+    }
+
+    public Block(String prevHash, AcademicInfoTranx studAcaInfoTranx) {
         super();
         long now = System.currentTimeMillis();
 
@@ -71,11 +82,10 @@ public class Block implements Serializable {
         this.blockHeader = new Header();
         this.blockHeader.setPreviousHash(prevHash);
         this.blockHeader.setTimestamp(now);
-
-        //hashing the entire block using Sha256
+        
         String blockHash = Hashing.hashBlock(getBytes(), Algorithms.AlgoSHA256());
         this.blockHeader.setCurrentHash((blockHash));
-        setInfo(studAcaInfo);
+        setInfo(studAcaInfoTranx);
     }
 
     private byte[] getBytes() {
@@ -86,13 +96,5 @@ public class Block implements Serializable {
             e.printStackTrace();
             return null;
         }
-    }
-
-    private void setInfo(StudentAcademicInfo studAcaInfo) {
-        this.studAcaInfo = studAcaInfo;
-    }
-
-    public StudentAcademicInfo getInfo() {
-        return studAcaInfo;
     }
 }
