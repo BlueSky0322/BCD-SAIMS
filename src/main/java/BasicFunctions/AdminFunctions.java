@@ -13,11 +13,6 @@ import org.javatuples.Quintet;
 public class AdminFunctions {
 
     private static String masterFolder = "MasterBinary";
-//    public static PersonalInfo pi;
-//    public static AcademicTranscript at;
-//    public static GraduationCert gc;
-//    public static OutstandingPayments op;
-//    public static TuitionPayments tp;
     private static AcademicInfoTranx studAcaInfoTranx = new AcademicInfoTranx();
 
     public static Quintet generateRecords(String ID) {
@@ -32,12 +27,8 @@ public class AdminFunctions {
     }
 
     public static void createRecord(AcademicInfoTranx tranxList) {
-        //File f = new File(FilePaths.getChainFilePath());
-        //StudentAcademicInfo studAcainfo = new AcademicInfoTranx();
         AtomicBoolean hasGenesis = new AtomicBoolean(false);
         Blockchain bc = Blockchain.getInstance(FilePaths.getChainFilePath());
-        //if (studAcainfo.checkAdd()) {
-        //Blockchain bc = Blockchain.getInstance(FilePaths.getChainFilePath());
 
         if (!hasGenesis.get()) {
             if (!new File(masterFolder)
