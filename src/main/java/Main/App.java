@@ -43,11 +43,6 @@ public class App {
                 emailEncryptedFile.createNewFile();
             }
 
-            File chainFile = new File(FilePaths.getChainFilePath());
-            if (!chainFile.exists()) {
-                chainFile.getParentFile().mkdirs();
-                chainFile.createNewFile();
-            }
         } catch (IOException e) {
             e.printStackTrace();
         }
