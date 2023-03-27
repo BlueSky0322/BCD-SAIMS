@@ -1,292 +1,33 @@
 [
   {
     "blockHeader": {
-      "index": 0,
-      "currentHash": "85ea15cb3868741e5412d0f0f7821a482bc13b9486ea4dc2071ec8dd27095ec1",
+      "blockIndex": 0,
+      "currentHash": "3ac2058e3e44e469572eb861daeffd42daa6e9afe47f4bd5a5a9c0b22459a204",
       "previousHash": "0",
-      "timestamp": 1679849469416
-    },
-    "studAcaInfo": {
-      "merkleRoot": "0",
-      "hashList": [],
-      "recordList": []
+      "timestamp": 1679915130820
     }
   },
   {
     "blockHeader": {
-      "index": 0,
-      "currentHash": "ec4492f2650186d8c6a4d4743908e76418aa5f5740af1c15b7fd47a7b8c1f3eb",
-      "previousHash": "85ea15cb3868741e5412d0f0f7821a482bc13b9486ea4dc2071ec8dd27095ec1",
-      "timestamp": 1679849513583
+      "blockIndex": 1,
+      "currentHash": "08dc5d10fc67ab59300e6e77c4ea6cfc2fee4a389262dc9653e2156315bd373a",
+      "previousHash": "3ac2058e3e44e469572eb861daeffd42daa6e9afe47f4bd5a5a9c0b22459a204",
+      "timestamp": 1679915130872
     },
-    "studAcaInfo": {
-      "merkleRoot": "4989ec36508ab7fb93fb640cd0cdc633edf7765554e5e4c737549b197c38ed78",
+    "transaction": {
+      "merkleRoot": "973d1a588db69bb6758e528d188a041c018bd1d01db31d8cd4e56f73221a6bf3",
       "hashList": [
-        "4989ec36508ab7fb93fb640cd0cdc633edf7765554e5e4c737549b197c38ed78"
+        "973d1a588db69bb6758e528d188a041c018bd1d01db31d8cd4e56f73221a6bf3"
       ],
-      "recordList": [
+      "studentAcademicInformation": [
         {
           "val0": {
-            "studID": "TP062153",
-            "studName": "Student TP062153",
+            "studID": "TP001",
+            "studName": "Student TP001",
             "studGender": "FEMALE",
-            "studContactNo": "0135736312",
-            "studAddress": "Wangsa Maju",
-            "studEmail": "TP062153@gmail.com",
-            "studDOB": "22/3/23",
-            "studMaritalStat": "MARRIED"
-          },
-          "val1": {
-            "moduleTaken": "BCD",
-            "moduleResult": "A",
-            "moduleGPA": "4.0",
-            "cgpa": "4.0"
-          },
-          "val2": {
-            "degreeType": "Bachelors Degree for Computer Science",
-            "classHonours": "First Class",
-            "CGPA": "4.0"
-          },
-          "val3": {
-            "totalOutstandingAmount": 69420.0,
-            "accumulatedPaid": 69000.0,
-            "amountUnpaid": 420.0,
-            "paymentDeadline": "31/12/2023"
-          },
-          "val4": {
-            "transactionID": "TRANX-TP062153",
-            "payerID": "PAYER-TP062153",
-            "payeeID": "PAYEE-APU123",
-            "transactionTime": "22/3/23",
-            "amount": 69420.0,
-            "receiptID": "RCPT-TP062153"
-          },
-          "valueArray": [
-            {
-              "studID": "TP062153",
-              "studName": "Student TP062153",
-              "studGender": "FEMALE",
-              "studContactNo": "0135736312",
-              "studAddress": "Wangsa Maju",
-              "studEmail": "TP062153@gmail.com",
-              "studDOB": "22/3/23",
-              "studMaritalStat": "MARRIED"
-            },
-            {
-              "moduleTaken": "BCD",
-              "moduleResult": "A",
-              "moduleGPA": "4.0",
-              "cgpa": "4.0"
-            },
-            {
-              "degreeType": "Bachelors Degree for Computer Science",
-              "classHonours": "First Class",
-              "CGPA": "4.0"
-            },
-            {
-              "totalOutstandingAmount": 69420.0,
-              "accumulatedPaid": 69000.0,
-              "amountUnpaid": 420.0,
-              "paymentDeadline": "31/12/2023"
-            },
-            {
-              "transactionID": "TRANX-TP062153",
-              "payerID": "PAYER-TP062153",
-              "payeeID": "PAYEE-APU123",
-              "transactionTime": "22/3/23",
-              "amount": 69420.0,
-              "receiptID": "RCPT-TP062153"
-            }
-          ],
-          "valueList": [
-            {
-              "studID": "TP062153",
-              "studName": "Student TP062153",
-              "studGender": "FEMALE",
-              "studContactNo": "0135736312",
-              "studAddress": "Wangsa Maju",
-              "studEmail": "TP062153@gmail.com",
-              "studDOB": "22/3/23",
-              "studMaritalStat": "MARRIED"
-            },
-            {
-              "moduleTaken": "BCD",
-              "moduleResult": "A",
-              "moduleGPA": "4.0",
-              "cgpa": "4.0"
-            },
-            {
-              "degreeType": "Bachelors Degree for Computer Science",
-              "classHonours": "First Class",
-              "CGPA": "4.0"
-            },
-            {
-              "totalOutstandingAmount": 69420.0,
-              "accumulatedPaid": 69000.0,
-              "amountUnpaid": 420.0,
-              "paymentDeadline": "31/12/2023"
-            },
-            {
-              "transactionID": "TRANX-TP062153",
-              "payerID": "PAYER-TP062153",
-              "payeeID": "PAYEE-APU123",
-              "transactionTime": "22/3/23",
-              "amount": 69420.0,
-              "receiptID": "RCPT-TP062153"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "blockHeader": {
-      "index": 0,
-      "currentHash": "8de3adda85f8df531076d511a37eb47aaec92d46384dc174c44dbfc95603468f",
-      "previousHash": "ec4492f2650186d8c6a4d4743908e76418aa5f5740af1c15b7fd47a7b8c1f3eb",
-      "timestamp": 1679849566664
-    },
-    "studAcaInfo": {
-      "merkleRoot": "4989ec36508ab7fb93fb640cd0cdc633edf7765554e5e4c737549b197c38ed78",
-      "hashList": [
-        "4989ec36508ab7fb93fb640cd0cdc633edf7765554e5e4c737549b197c38ed78"
-      ],
-      "recordList": [
-        {
-          "val0": {
-            "studID": "TP062153",
-            "studName": "Student TP062153",
-            "studGender": "FEMALE",
-            "studContactNo": "0135736312",
-            "studAddress": "Wangsa Maju",
-            "studEmail": "TP062153@gmail.com",
-            "studDOB": "22/3/23",
-            "studMaritalStat": "MARRIED"
-          },
-          "val1": {
-            "moduleTaken": "BCD",
-            "moduleResult": "A",
-            "moduleGPA": "4.0",
-            "cgpa": "4.0"
-          },
-          "val2": {
-            "degreeType": "Bachelors Degree for Computer Science",
-            "classHonours": "First Class",
-            "CGPA": "4.0"
-          },
-          "val3": {
-            "totalOutstandingAmount": 69420.0,
-            "accumulatedPaid": 69000.0,
-            "amountUnpaid": 420.0,
-            "paymentDeadline": "31/12/2023"
-          },
-          "val4": {
-            "transactionID": "TRANX-TP062153",
-            "payerID": "PAYER-TP062153",
-            "payeeID": "PAYEE-APU123",
-            "transactionTime": "22/3/23",
-            "amount": 69420.0,
-            "receiptID": "RCPT-TP062153"
-          },
-          "valueArray": [
-            {
-              "studID": "TP062153",
-              "studName": "Student TP062153",
-              "studGender": "FEMALE",
-              "studContactNo": "0135736312",
-              "studAddress": "Wangsa Maju",
-              "studEmail": "TP062153@gmail.com",
-              "studDOB": "22/3/23",
-              "studMaritalStat": "MARRIED"
-            },
-            {
-              "moduleTaken": "BCD",
-              "moduleResult": "A",
-              "moduleGPA": "4.0",
-              "cgpa": "4.0"
-            },
-            {
-              "degreeType": "Bachelors Degree for Computer Science",
-              "classHonours": "First Class",
-              "CGPA": "4.0"
-            },
-            {
-              "totalOutstandingAmount": 69420.0,
-              "accumulatedPaid": 69000.0,
-              "amountUnpaid": 420.0,
-              "paymentDeadline": "31/12/2023"
-            },
-            {
-              "transactionID": "TRANX-TP062153",
-              "payerID": "PAYER-TP062153",
-              "payeeID": "PAYEE-APU123",
-              "transactionTime": "22/3/23",
-              "amount": 69420.0,
-              "receiptID": "RCPT-TP062153"
-            }
-          ],
-          "valueList": [
-            {
-              "studID": "TP062153",
-              "studName": "Student TP062153",
-              "studGender": "FEMALE",
-              "studContactNo": "0135736312",
-              "studAddress": "Wangsa Maju",
-              "studEmail": "TP062153@gmail.com",
-              "studDOB": "22/3/23",
-              "studMaritalStat": "MARRIED"
-            },
-            {
-              "moduleTaken": "BCD",
-              "moduleResult": "A",
-              "moduleGPA": "4.0",
-              "cgpa": "4.0"
-            },
-            {
-              "degreeType": "Bachelors Degree for Computer Science",
-              "classHonours": "First Class",
-              "CGPA": "4.0"
-            },
-            {
-              "totalOutstandingAmount": 69420.0,
-              "accumulatedPaid": 69000.0,
-              "amountUnpaid": 420.0,
-              "paymentDeadline": "31/12/2023"
-            },
-            {
-              "transactionID": "TRANX-TP062153",
-              "payerID": "PAYER-TP062153",
-              "payeeID": "PAYEE-APU123",
-              "transactionTime": "22/3/23",
-              "amount": 69420.0,
-              "receiptID": "RCPT-TP062153"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "blockHeader": {
-      "index": 0,
-      "currentHash": "29c5c39e59fceb2e06aaf55e0d539dd32f9f25585a0524dd8dfd6e069c5630dd",
-      "previousHash": "8de3adda85f8df531076d511a37eb47aaec92d46384dc174c44dbfc95603468f",
-      "timestamp": 1679849596201
-    },
-    "studAcaInfo": {
-      "merkleRoot": "5f54e4b4ae0f4f539243187874e071bce653c9bb72b6033704a3c1708bd7ee6a",
-      "hashList": [
-        "5f54e4b4ae0f4f539243187874e071bce653c9bb72b6033704a3c1708bd7ee6a"
-      ],
-      "recordList": [
-        {
-          "val0": {
-            "studID": "TP060005",
-            "studName": "Student TP060005",
-            "studGender": "FEMALE",
-            "studContactNo": "0145892415",
-            "studAddress": "Segambut",
-            "studEmail": "TP060005@gmail.com",
+            "studContactNo": "0130068081",
+            "studAddress": "Kepong",
+            "studEmail": "TP001@gmail.com",
             "studDOB": "22/3/23",
             "studMaritalStat": "SINGLE"
           },
@@ -308,21 +49,21 @@
             "paymentDeadline": "31/12/2023"
           },
           "val4": {
-            "transactionID": "TRANX-TP060005",
-            "payerID": "PAYER-TP060005",
+            "transactionID": "TRANX-TP001",
+            "payerID": "PAYER-TP001",
             "payeeID": "PAYEE-APU123",
             "transactionTime": "22/3/23",
             "amount": 69420.0,
-            "receiptID": "RCPT-TP060005"
+            "receiptID": "RCPT-TP001"
           },
           "valueArray": [
             {
-              "studID": "TP060005",
-              "studName": "Student TP060005",
+              "studID": "TP001",
+              "studName": "Student TP001",
               "studGender": "FEMALE",
-              "studContactNo": "0145892415",
-              "studAddress": "Segambut",
-              "studEmail": "TP060005@gmail.com",
+              "studContactNo": "0130068081",
+              "studAddress": "Kepong",
+              "studEmail": "TP001@gmail.com",
               "studDOB": "22/3/23",
               "studMaritalStat": "SINGLE"
             },
@@ -344,22 +85,22 @@
               "paymentDeadline": "31/12/2023"
             },
             {
-              "transactionID": "TRANX-TP060005",
-              "payerID": "PAYER-TP060005",
+              "transactionID": "TRANX-TP001",
+              "payerID": "PAYER-TP001",
               "payeeID": "PAYEE-APU123",
               "transactionTime": "22/3/23",
               "amount": 69420.0,
-              "receiptID": "RCPT-TP060005"
+              "receiptID": "RCPT-TP001"
             }
           ],
           "valueList": [
             {
-              "studID": "TP060005",
-              "studName": "Student TP060005",
+              "studID": "TP001",
+              "studName": "Student TP001",
               "studGender": "FEMALE",
-              "studContactNo": "0145892415",
-              "studAddress": "Segambut",
-              "studEmail": "TP060005@gmail.com",
+              "studContactNo": "0130068081",
+              "studAddress": "Kepong",
+              "studEmail": "TP001@gmail.com",
               "studDOB": "22/3/23",
               "studMaritalStat": "SINGLE"
             },
@@ -381,130 +122,12 @@
               "paymentDeadline": "31/12/2023"
             },
             {
-              "transactionID": "TRANX-TP060005",
-              "payerID": "PAYER-TP060005",
+              "transactionID": "TRANX-TP001",
+              "payerID": "PAYER-TP001",
               "payeeID": "PAYEE-APU123",
               "transactionTime": "22/3/23",
               "amount": 69420.0,
-              "receiptID": "RCPT-TP060005"
-            }
-          ]
-        }
-      ]
-    }
-  }
-]t": [
-        "9b9418b6edf76ed949418194bce190ef1ed1a0dc15677cb2214e07d572bd3f39"
-      ],
-      "recordList": [
-        {
-          "val0": {
-            "studID": "TP064200",
-            "studName": "Student TP064200",
-            "studGender": "MALE",
-            "studContactNo": "0100817486",
-            "studAddress": "Wangsa Maju",
-            "studEmail": "TP064200@gmail.com",
-            "studDOB": "22/3/23",
-            "studMaritalStat": "MARRIED"
-          },
-          "val1": {
-            "moduleTaken": "BCD",
-            "moduleResult": "A",
-            "moduleGPA": "4.0",
-            "cgpa": "4.0"
-          },
-          "val2": {
-            "degreeType": "Bachelors Degree for Computer Science",
-            "classHonours": "First Class",
-            "CGPA": "4.0"
-          },
-          "val3": {
-            "totalOutstandingAmount": 69420.0,
-            "accumulatedPaid": 69000.0,
-            "amountUnpaid": 420.0,
-            "paymentDeadline": "31/12/2023"
-          },
-          "val4": {
-            "transactionID": "TRANX-TP064200",
-            "payerID": "PAYER-TP064200",
-            "payeeID": "PAYEE-APU123",
-            "transactionTime": "22/3/23",
-            "amount": 69420.0,
-            "receiptID": "RCPT-TP064200"
-          },
-          "valueArray": [
-            {
-              "studID": "TP064200",
-              "studName": "Student TP064200",
-              "studGender": "MALE",
-              "studContactNo": "0100817486",
-              "studAddress": "Wangsa Maju",
-              "studEmail": "TP064200@gmail.com",
-              "studDOB": "22/3/23",
-              "studMaritalStat": "MARRIED"
-            },
-            {
-              "moduleTaken": "BCD",
-              "moduleResult": "A",
-              "moduleGPA": "4.0",
-              "cgpa": "4.0"
-            },
-            {
-              "degreeType": "Bachelors Degree for Computer Science",
-              "classHonours": "First Class",
-              "CGPA": "4.0"
-            },
-            {
-              "totalOutstandingAmount": 69420.0,
-              "accumulatedPaid": 69000.0,
-              "amountUnpaid": 420.0,
-              "paymentDeadline": "31/12/2023"
-            },
-            {
-              "transactionID": "TRANX-TP064200",
-              "payerID": "PAYER-TP064200",
-              "payeeID": "PAYEE-APU123",
-              "transactionTime": "22/3/23",
-              "amount": 69420.0,
-              "receiptID": "RCPT-TP064200"
-            }
-          ],
-          "valueList": [
-            {
-              "studID": "TP064200",
-              "studName": "Student TP064200",
-              "studGender": "MALE",
-              "studContactNo": "0100817486",
-              "studAddress": "Wangsa Maju",
-              "studEmail": "TP064200@gmail.com",
-              "studDOB": "22/3/23",
-              "studMaritalStat": "MARRIED"
-            },
-            {
-              "moduleTaken": "BCD",
-              "moduleResult": "A",
-              "moduleGPA": "4.0",
-              "cgpa": "4.0"
-            },
-            {
-              "degreeType": "Bachelors Degree for Computer Science",
-              "classHonours": "First Class",
-              "CGPA": "4.0"
-            },
-            {
-              "totalOutstandingAmount": 69420.0,
-              "accumulatedPaid": 69000.0,
-              "amountUnpaid": 420.0,
-              "paymentDeadline": "31/12/2023"
-            },
-            {
-              "transactionID": "TRANX-TP064200",
-              "payerID": "PAYER-TP064200",
-              "payeeID": "PAYEE-APU123",
-              "transactionTime": "22/3/23",
-              "amount": 69420.0,
-              "receiptID": "RCPT-TP064200"
+              "receiptID": "RCPT-TP001"
             }
           ]
         }
@@ -513,25 +136,136 @@
   },
   {
     "blockHeader": {
-      "index": 0,
-      "currentHash": "f5c8a5d30fb6d89be9c0f6305deaab2dec29340114443ce8aed830eb01e2cd5f",
-      "previousHash": "6bb66f7cb284de0731bd747c4434ce03b12f3df3c978e5d8f3ffa93230eb2d86",
-      "timestamp": 1679848077362
+      "blockIndex": 2,
+      "currentHash": "818a5f58e359344de3fa4c4b2e67141fb0d408b27188cae75dbdf247aeaf1b18",
+      "previousHash": "08dc5d10fc67ab59300e6e77c4ea6cfc2fee4a389262dc9653e2156315bd373a",
+      "timestamp": 1679915178972
     },
-    "studAcaInfo": {
-      "merkleRoot": "04d96482557c7f0e9b99fc92479b1bd64b5d13c64517725468d2a8343508a1db",
+    "transaction": {
+      "merkleRoot": "dc357089f67c0048eee27eab4061c2fa4b3a07d1b37157733ea9bf6ad0717d53",
       "hashList": [
-        "04d96482557c7f0e9b99fc92479b1bd64b5d13c64517725468d2a8343508a1db"
+        "dc357089f67c0048eee27eab4061c2fa4b3a07d1b37157733ea9bf6ad0717d53"
       ],
-      "recordList": [
+      "studentAcademicInformation": [
         {
           "val0": {
-            "studID": "TP060001",
-            "studName": "Student TP060001",
+            "studID": "TP001",
+            "studName": "Student TP001",
             "studGender": "FEMALE",
-            "studContactNo": "0170099496",
+            "studContactNo": "0130068081",
             "studAddress": "Kepong",
-            "studEmail": "TP060001@gmail.com",
+            "studEmail": "TP001@gmail.com",
+            "studDOB": "22/3/23",
+            "studMaritalStat": "SINGLE"
+          },
+          "val1": {
+            "moduleTaken": "BCD",
+            "moduleResult": "A",
+            "moduleGPA": "4.0",
+            "cgpa": "4.0"
+          },
+          "val2": {
+            "degreeType": "Bachelors Degree for Computer Science",
+            "classHonours": "First Class",
+            "CGPA": "4.0"
+          },
+          "val3": {
+            "totalOutstandingAmount": 69420.0,
+            "accumulatedPaid": 69000.0,
+            "amountUnpaid": 420.0,
+            "paymentDeadline": "31/12/2023"
+          },
+          "val4": {
+            "transactionID": "TRANX-TP001",
+            "payerID": "PAYER-TP001",
+            "payeeID": "PAYEE-APU123",
+            "transactionTime": "22/3/23",
+            "amount": 69420.0,
+            "receiptID": "RCPT-TP001"
+          },
+          "valueArray": [
+            {
+              "studID": "TP001",
+              "studName": "Student TP001",
+              "studGender": "FEMALE",
+              "studContactNo": "0130068081",
+              "studAddress": "Kepong",
+              "studEmail": "TP001@gmail.com",
+              "studDOB": "22/3/23",
+              "studMaritalStat": "SINGLE"
+            },
+            {
+              "moduleTaken": "BCD",
+              "moduleResult": "A",
+              "moduleGPA": "4.0",
+              "cgpa": "4.0"
+            },
+            {
+              "degreeType": "Bachelors Degree for Computer Science",
+              "classHonours": "First Class",
+              "CGPA": "4.0"
+            },
+            {
+              "totalOutstandingAmount": 69420.0,
+              "accumulatedPaid": 69000.0,
+              "amountUnpaid": 420.0,
+              "paymentDeadline": "31/12/2023"
+            },
+            {
+              "transactionID": "TRANX-TP001",
+              "payerID": "PAYER-TP001",
+              "payeeID": "PAYEE-APU123",
+              "transactionTime": "22/3/23",
+              "amount": 69420.0,
+              "receiptID": "RCPT-TP001"
+            }
+          ],
+          "valueList": [
+            {
+              "studID": "TP001",
+              "studName": "Student TP001",
+              "studGender": "FEMALE",
+              "studContactNo": "0130068081",
+              "studAddress": "Kepong",
+              "studEmail": "TP001@gmail.com",
+              "studDOB": "22/3/23",
+              "studMaritalStat": "SINGLE"
+            },
+            {
+              "moduleTaken": "BCD",
+              "moduleResult": "A",
+              "moduleGPA": "4.0",
+              "cgpa": "4.0"
+            },
+            {
+              "degreeType": "Bachelors Degree for Computer Science",
+              "classHonours": "First Class",
+              "CGPA": "4.0"
+            },
+            {
+              "totalOutstandingAmount": 69420.0,
+              "accumulatedPaid": 69000.0,
+              "amountUnpaid": 420.0,
+              "paymentDeadline": "31/12/2023"
+            },
+            {
+              "transactionID": "TRANX-TP001",
+              "payerID": "PAYER-TP001",
+              "payeeID": "PAYEE-APU123",
+              "transactionTime": "22/3/23",
+              "amount": 69420.0,
+              "receiptID": "RCPT-TP001"
+            }
+          ]
+        },
+        {
+          "val0": {
+            "studID": "TP002",
+            "studName": "Student TP002",
+            "studGender": "FEMALE",
+            "studContactNo": "0190728559",
+            "studAddress": "Kepong",
+            "studEmail": "TP002@gmail.com",
             "studDOB": "22/3/23",
             "studMaritalStat": "MARRIED"
           },
@@ -553,21 +287,21 @@
             "paymentDeadline": "31/12/2023"
           },
           "val4": {
-            "transactionID": "TRANX-TP060001",
-            "payerID": "PAYER-TP060001",
+            "transactionID": "TRANX-TP002",
+            "payerID": "PAYER-TP002",
             "payeeID": "PAYEE-APU123",
             "transactionTime": "22/3/23",
             "amount": 69420.0,
-            "receiptID": "RCPT-TP060001"
+            "receiptID": "RCPT-TP002"
           },
           "valueArray": [
             {
-              "studID": "TP060001",
-              "studName": "Student TP060001",
+              "studID": "TP002",
+              "studName": "Student TP002",
               "studGender": "FEMALE",
-              "studContactNo": "0170099496",
+              "studContactNo": "0190728559",
               "studAddress": "Kepong",
-              "studEmail": "TP060001@gmail.com",
+              "studEmail": "TP002@gmail.com",
               "studDOB": "22/3/23",
               "studMaritalStat": "MARRIED"
             },
@@ -589,22 +323,22 @@
               "paymentDeadline": "31/12/2023"
             },
             {
-              "transactionID": "TRANX-TP060001",
-              "payerID": "PAYER-TP060001",
+              "transactionID": "TRANX-TP002",
+              "payerID": "PAYER-TP002",
               "payeeID": "PAYEE-APU123",
               "transactionTime": "22/3/23",
               "amount": 69420.0,
-              "receiptID": "RCPT-TP060001"
+              "receiptID": "RCPT-TP002"
             }
           ],
           "valueList": [
             {
-              "studID": "TP060001",
-              "studName": "Student TP060001",
+              "studID": "TP002",
+              "studName": "Student TP002",
               "studGender": "FEMALE",
-              "studContactNo": "0170099496",
+              "studContactNo": "0190728559",
               "studAddress": "Kepong",
-              "studEmail": "TP060001@gmail.com",
+              "studEmail": "TP002@gmail.com",
               "studDOB": "22/3/23",
               "studMaritalStat": "MARRIED"
             },
@@ -626,12 +360,12 @@
               "paymentDeadline": "31/12/2023"
             },
             {
-              "transactionID": "TRANX-TP060001",
-              "payerID": "PAYER-TP060001",
+              "transactionID": "TRANX-TP002",
+              "payerID": "PAYER-TP002",
               "payeeID": "PAYEE-APU123",
               "transactionTime": "22/3/23",
               "amount": 69420.0,
-              "receiptID": "RCPT-TP060001"
+              "receiptID": "RCPT-TP002"
             }
           ]
         }
@@ -640,25 +374,136 @@
   },
   {
     "blockHeader": {
-      "index": 0,
-      "currentHash": "cdafd0db5c0ba5869216fb951dc13775d780758c5a071a7b416d0ed435eeff46",
-      "previousHash": "f5c8a5d30fb6d89be9c0f6305deaab2dec29340114443ce8aed830eb01e2cd5f",
-      "timestamp": 1679848237791
+      "blockIndex": 3,
+      "currentHash": "1ac06095e50ebc29970eb1f54e776d5082dd104ba3ea60c2cc083d4ad41b4e3c",
+      "previousHash": "818a5f58e359344de3fa4c4b2e67141fb0d408b27188cae75dbdf247aeaf1b18",
+      "timestamp": 1679915254223
     },
-    "studAcaInfo": {
-      "merkleRoot": "63b4d31a5a0a8bbcc18ec96707ed5b7a70b5d4b8e2ea1f01ff672b5edad8fdfa",
+    "transaction": {
+      "merkleRoot": "93cc48ebadbe3f4e69f431087077929945780239e20b4d1d81e443bcf6359d5c",
       "hashList": [
-        "63b4d31a5a0a8bbcc18ec96707ed5b7a70b5d4b8e2ea1f01ff672b5edad8fdfa"
+        "93cc48ebadbe3f4e69f431087077929945780239e20b4d1d81e443bcf6359d5c"
       ],
-      "recordList": [
+      "studentAcademicInformation": [
         {
           "val0": {
-            "studID": "TP060002",
-            "studName": "Student TP060002",
-            "studGender": "MALE",
-            "studContactNo": "0162569745",
-            "studAddress": "Segambut",
-            "studEmail": "TP060002@gmail.com",
+            "studID": "TP001",
+            "studName": "Student TP001",
+            "studGender": "FEMALE",
+            "studContactNo": "0130068081",
+            "studAddress": "Kepong",
+            "studEmail": "TP001@gmail.com",
+            "studDOB": "22/3/23",
+            "studMaritalStat": "SINGLE"
+          },
+          "val1": {
+            "moduleTaken": "BCD",
+            "moduleResult": "A",
+            "moduleGPA": "4.0",
+            "cgpa": "4.0"
+          },
+          "val2": {
+            "degreeType": "Bachelors Degree for Computer Science",
+            "classHonours": "First Class",
+            "CGPA": "4.0"
+          },
+          "val3": {
+            "totalOutstandingAmount": 69420.0,
+            "accumulatedPaid": 69000.0,
+            "amountUnpaid": 420.0,
+            "paymentDeadline": "31/12/2023"
+          },
+          "val4": {
+            "transactionID": "TRANX-TP001",
+            "payerID": "PAYER-TP001",
+            "payeeID": "PAYEE-APU123",
+            "transactionTime": "22/3/23",
+            "amount": 69420.0,
+            "receiptID": "RCPT-TP001"
+          },
+          "valueArray": [
+            {
+              "studID": "TP001",
+              "studName": "Student TP001",
+              "studGender": "FEMALE",
+              "studContactNo": "0130068081",
+              "studAddress": "Kepong",
+              "studEmail": "TP001@gmail.com",
+              "studDOB": "22/3/23",
+              "studMaritalStat": "SINGLE"
+            },
+            {
+              "moduleTaken": "BCD",
+              "moduleResult": "A",
+              "moduleGPA": "4.0",
+              "cgpa": "4.0"
+            },
+            {
+              "degreeType": "Bachelors Degree for Computer Science",
+              "classHonours": "First Class",
+              "CGPA": "4.0"
+            },
+            {
+              "totalOutstandingAmount": 69420.0,
+              "accumulatedPaid": 69000.0,
+              "amountUnpaid": 420.0,
+              "paymentDeadline": "31/12/2023"
+            },
+            {
+              "transactionID": "TRANX-TP001",
+              "payerID": "PAYER-TP001",
+              "payeeID": "PAYEE-APU123",
+              "transactionTime": "22/3/23",
+              "amount": 69420.0,
+              "receiptID": "RCPT-TP001"
+            }
+          ],
+          "valueList": [
+            {
+              "studID": "TP001",
+              "studName": "Student TP001",
+              "studGender": "FEMALE",
+              "studContactNo": "0130068081",
+              "studAddress": "Kepong",
+              "studEmail": "TP001@gmail.com",
+              "studDOB": "22/3/23",
+              "studMaritalStat": "SINGLE"
+            },
+            {
+              "moduleTaken": "BCD",
+              "moduleResult": "A",
+              "moduleGPA": "4.0",
+              "cgpa": "4.0"
+            },
+            {
+              "degreeType": "Bachelors Degree for Computer Science",
+              "classHonours": "First Class",
+              "CGPA": "4.0"
+            },
+            {
+              "totalOutstandingAmount": 69420.0,
+              "accumulatedPaid": 69000.0,
+              "amountUnpaid": 420.0,
+              "paymentDeadline": "31/12/2023"
+            },
+            {
+              "transactionID": "TRANX-TP001",
+              "payerID": "PAYER-TP001",
+              "payeeID": "PAYEE-APU123",
+              "transactionTime": "22/3/23",
+              "amount": 69420.0,
+              "receiptID": "RCPT-TP001"
+            }
+          ]
+        },
+        {
+          "val0": {
+            "studID": "TP002",
+            "studName": "Student TP002",
+            "studGender": "FEMALE",
+            "studContactNo": "0190728559",
+            "studAddress": "Kepong",
+            "studEmail": "TP002@gmail.com",
             "studDOB": "22/3/23",
             "studMaritalStat": "MARRIED"
           },
@@ -680,21 +525,21 @@
             "paymentDeadline": "31/12/2023"
           },
           "val4": {
-            "transactionID": "TRANX-TP060002",
-            "payerID": "PAYER-TP060002",
+            "transactionID": "TRANX-TP002",
+            "payerID": "PAYER-TP002",
             "payeeID": "PAYEE-APU123",
             "transactionTime": "22/3/23",
             "amount": 69420.0,
-            "receiptID": "RCPT-TP060002"
+            "receiptID": "RCPT-TP002"
           },
           "valueArray": [
             {
-              "studID": "TP060002",
-              "studName": "Student TP060002",
-              "studGender": "MALE",
-              "studContactNo": "0162569745",
-              "studAddress": "Segambut",
-              "studEmail": "TP060002@gmail.com",
+              "studID": "TP002",
+              "studName": "Student TP002",
+              "studGender": "FEMALE",
+              "studContactNo": "0190728559",
+              "studAddress": "Kepong",
+              "studEmail": "TP002@gmail.com",
               "studDOB": "22/3/23",
               "studMaritalStat": "MARRIED"
             },
@@ -716,22 +561,22 @@
               "paymentDeadline": "31/12/2023"
             },
             {
-              "transactionID": "TRANX-TP060002",
-              "payerID": "PAYER-TP060002",
+              "transactionID": "TRANX-TP002",
+              "payerID": "PAYER-TP002",
               "payeeID": "PAYEE-APU123",
               "transactionTime": "22/3/23",
               "amount": 69420.0,
-              "receiptID": "RCPT-TP060002"
+              "receiptID": "RCPT-TP002"
             }
           ],
           "valueList": [
             {
-              "studID": "TP060002",
-              "studName": "Student TP060002",
-              "studGender": "MALE",
-              "studContactNo": "0162569745",
-              "studAddress": "Segambut",
-              "studEmail": "TP060002@gmail.com",
+              "studID": "TP002",
+              "studName": "Student TP002",
+              "studGender": "FEMALE",
+              "studContactNo": "0190728559",
+              "studAddress": "Kepong",
+              "studEmail": "TP002@gmail.com",
               "studDOB": "22/3/23",
               "studMaritalStat": "MARRIED"
             },
@@ -753,12 +598,250 @@
               "paymentDeadline": "31/12/2023"
             },
             {
-              "transactionID": "TRANX-TP060002",
-              "payerID": "PAYER-TP060002",
+              "transactionID": "TRANX-TP002",
+              "payerID": "PAYER-TP002",
               "payeeID": "PAYEE-APU123",
               "transactionTime": "22/3/23",
               "amount": 69420.0,
-              "receiptID": "RCPT-TP060002"
+              "receiptID": "RCPT-TP002"
+            }
+          ]
+        },
+        {
+          "val0": {
+            "studID": "TP003",
+            "studName": "Student TP003",
+            "studGender": "FEMALE",
+            "studContactNo": "0186529554",
+            "studAddress": "Cheras",
+            "studEmail": "TP003@gmail.com",
+            "studDOB": "22/3/23",
+            "studMaritalStat": "MARRIED"
+          },
+          "val1": {
+            "moduleTaken": "BCD",
+            "moduleResult": "A",
+            "moduleGPA": "4.0",
+            "cgpa": "4.0"
+          },
+          "val2": {
+            "degreeType": "Bachelors Degree for Computer Science",
+            "classHonours": "First Class",
+            "CGPA": "4.0"
+          },
+          "val3": {
+            "totalOutstandingAmount": 69420.0,
+            "accumulatedPaid": 69000.0,
+            "amountUnpaid": 420.0,
+            "paymentDeadline": "31/12/2023"
+          },
+          "val4": {
+            "transactionID": "TRANX-TP003",
+            "payerID": "PAYER-TP003",
+            "payeeID": "PAYEE-APU123",
+            "transactionTime": "22/3/23",
+            "amount": 69420.0,
+            "receiptID": "RCPT-TP003"
+          },
+          "valueArray": [
+            {
+              "studID": "TP003",
+              "studName": "Student TP003",
+              "studGender": "FEMALE",
+              "studContactNo": "0186529554",
+              "studAddress": "Cheras",
+              "studEmail": "TP003@gmail.com",
+              "studDOB": "22/3/23",
+              "studMaritalStat": "MARRIED"
+            },
+            {
+              "moduleTaken": "BCD",
+              "moduleResult": "A",
+              "moduleGPA": "4.0",
+              "cgpa": "4.0"
+            },
+            {
+              "degreeType": "Bachelors Degree for Computer Science",
+              "classHonours": "First Class",
+              "CGPA": "4.0"
+            },
+            {
+              "totalOutstandingAmount": 69420.0,
+              "accumulatedPaid": 69000.0,
+              "amountUnpaid": 420.0,
+              "paymentDeadline": "31/12/2023"
+            },
+            {
+              "transactionID": "TRANX-TP003",
+              "payerID": "PAYER-TP003",
+              "payeeID": "PAYEE-APU123",
+              "transactionTime": "22/3/23",
+              "amount": 69420.0,
+              "receiptID": "RCPT-TP003"
+            }
+          ],
+          "valueList": [
+            {
+              "studID": "TP003",
+              "studName": "Student TP003",
+              "studGender": "FEMALE",
+              "studContactNo": "0186529554",
+              "studAddress": "Cheras",
+              "studEmail": "TP003@gmail.com",
+              "studDOB": "22/3/23",
+              "studMaritalStat": "MARRIED"
+            },
+            {
+              "moduleTaken": "BCD",
+              "moduleResult": "A",
+              "moduleGPA": "4.0",
+              "cgpa": "4.0"
+            },
+            {
+              "degreeType": "Bachelors Degree for Computer Science",
+              "classHonours": "First Class",
+              "CGPA": "4.0"
+            },
+            {
+              "totalOutstandingAmount": 69420.0,
+              "accumulatedPaid": 69000.0,
+              "amountUnpaid": 420.0,
+              "paymentDeadline": "31/12/2023"
+            },
+            {
+              "transactionID": "TRANX-TP003",
+              "payerID": "PAYER-TP003",
+              "payeeID": "PAYEE-APU123",
+              "transactionTime": "22/3/23",
+              "amount": 69420.0,
+              "receiptID": "RCPT-TP003"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "blockHeader": {
+      "blockIndex": 4,
+      "currentHash": "7f5fe006543ceb512d9f1b3fc8b058985bb2175df4b15f3b3eb18edfcd056320",
+      "previousHash": "1ac06095e50ebc29970eb1f54e776d5082dd104ba3ea60c2cc083d4ad41b4e3c",
+      "timestamp": 1679923909284
+    },
+    "transaction": {
+      "merkleRoot": "f322b08adb18df0f71f6092a85cced14a13eb62eb9690e9b170e292b5b23b594",
+      "hashList": [
+        "f322b08adb18df0f71f6092a85cced14a13eb62eb9690e9b170e292b5b23b594"
+      ],
+      "studentAcademicInformation": [
+        {
+          "val0": {
+            "studID": "TP017",
+            "studName": "Student TP017",
+            "studGender": "FEMALE",
+            "studContactNo": "0114706856",
+            "studAddress": "Setapak",
+            "studEmail": "TP017@gmail.com",
+            "studDOB": "22/3/23",
+            "studMaritalStat": "SINGLE"
+          },
+          "val1": {
+            "moduleTaken": "BCD",
+            "moduleResult": "A",
+            "moduleGPA": "4.0",
+            "cgpa": "4.0"
+          },
+          "val2": {
+            "degreeType": "Bachelors Degree for Computer Science",
+            "classHonours": "First Class",
+            "CGPA": "4.0"
+          },
+          "val3": {
+            "totalOutstandingAmount": 69420.0,
+            "accumulatedPaid": 69000.0,
+            "amountUnpaid": 420.0,
+            "paymentDeadline": "31/12/2023"
+          },
+          "val4": {
+            "transactionID": "TRANX-TP017",
+            "payerID": "PAYER-TP017",
+            "payeeID": "PAYEE-APU123",
+            "transactionTime": "22/3/23",
+            "amount": 69420.0,
+            "receiptID": "RCPT-TP017"
+          },
+          "valueArray": [
+            {
+              "studID": "TP017",
+              "studName": "Student TP017",
+              "studGender": "FEMALE",
+              "studContactNo": "0114706856",
+              "studAddress": "Setapak",
+              "studEmail": "TP017@gmail.com",
+              "studDOB": "22/3/23",
+              "studMaritalStat": "SINGLE"
+            },
+            {
+              "moduleTaken": "BCD",
+              "moduleResult": "A",
+              "moduleGPA": "4.0",
+              "cgpa": "4.0"
+            },
+            {
+              "degreeType": "Bachelors Degree for Computer Science",
+              "classHonours": "First Class",
+              "CGPA": "4.0"
+            },
+            {
+              "totalOutstandingAmount": 69420.0,
+              "accumulatedPaid": 69000.0,
+              "amountUnpaid": 420.0,
+              "paymentDeadline": "31/12/2023"
+            },
+            {
+              "transactionID": "TRANX-TP017",
+              "payerID": "PAYER-TP017",
+              "payeeID": "PAYEE-APU123",
+              "transactionTime": "22/3/23",
+              "amount": 69420.0,
+              "receiptID": "RCPT-TP017"
+            }
+          ],
+          "valueList": [
+            {
+              "studID": "TP017",
+              "studName": "Student TP017",
+              "studGender": "FEMALE",
+              "studContactNo": "0114706856",
+              "studAddress": "Setapak",
+              "studEmail": "TP017@gmail.com",
+              "studDOB": "22/3/23",
+              "studMaritalStat": "SINGLE"
+            },
+            {
+              "moduleTaken": "BCD",
+              "moduleResult": "A",
+              "moduleGPA": "4.0",
+              "cgpa": "4.0"
+            },
+            {
+              "degreeType": "Bachelors Degree for Computer Science",
+              "classHonours": "First Class",
+              "CGPA": "4.0"
+            },
+            {
+              "totalOutstandingAmount": 69420.0,
+              "accumulatedPaid": 69000.0,
+              "amountUnpaid": 420.0,
+              "paymentDeadline": "31/12/2023"
+            },
+            {
+              "transactionID": "TRANX-TP017",
+              "payerID": "PAYER-TP017",
+              "payeeID": "PAYEE-APU123",
+              "transactionTime": "22/3/23",
+              "amount": 69420.0,
+              "receiptID": "RCPT-TP017"
             }
           ]
         }
