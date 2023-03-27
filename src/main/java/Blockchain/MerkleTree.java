@@ -39,12 +39,12 @@ public class MerkleTree {
         List<Quintet<PersonalInfo, AcademicTranscript, GraduationCert, OutstandingPayments, TuitionPayments>> tempList = new ArrayList<>();
         for (Quintet data : this.studAcaInfoList) {
             tempList.add(data);
+            //System.out.println(data);
         }
         List<String> hashes = genRecordHashList(tempList);
         //System.out.println("[BUILD] " + hashes.get(0));
         while (hashes.size() != 1) {
-            hashes = genRecordHashListAsString(hashes);
-            
+            hashes = genRecordHashListAsString(hashes);            
         }
         this.merkleRoot = hashes.get(0);
         this.recordsHashListAsString = hashes;
@@ -56,7 +56,7 @@ public class MerkleTree {
         while (i < recordList.size()) {
             Quintet<PersonalInfo, AcademicTranscript, GraduationCert, OutstandingPayments, TuitionPayments> left = recordList.get(i); 
             i++;
-            Quintet<PersonalInfo, AcademicTranscript, GraduationCert, OutstandingPayments, TuitionPayments> right = null;
+            Quintet<PersonalInfo, AcademicTranscript, GraduationCert, OutstandingPayments, TuitionPayments> right;
             String hashing;
             if (i != recordList.size()) {
                 right = recordList.get(i);
