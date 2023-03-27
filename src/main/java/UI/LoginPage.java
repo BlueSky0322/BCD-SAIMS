@@ -175,7 +175,7 @@ public class LoginPage extends javax.swing.JFrame {
                 //System.out.println("UI: " + validEmail);
                 if (validEmail) {
                     //System.out.println("UI: " + Auth.verifyEmail(email.get(), emailTxtField.getText()));
-                    JOptionPane.showMessageDialog(null, "User has succesfully logged in!\nWelcome back, " + email.get());
+                    JOptionPane.showMessageDialog(this, "User has succesfully logged in!\nWelcome back, " + email.get());
                     if (email.get().startsWith("admin")) {
                         //System.out.println("admin");
                         new MainMenu(new Admin()).setVisible(true);
@@ -186,11 +186,11 @@ public class LoginPage extends javax.swing.JFrame {
                         dispose();
                     }
                 } else {
-                    JOptionPane.showMessageDialog(null, "Bad login!\nPlease register first.");
+                    JOptionPane.showMessageDialog(this, "Bad login!\nPlease register first.");
                 }
             }
         } else
-            JOptionPane.showMessageDialog(null, "Cannot leave empty fields. \nPlease enter your email to continue.");
+            JOptionPane.showMessageDialog(this, "Cannot leave empty fields. \nPlease enter your email to continue.");
     }//GEN-LAST:event_loginBtnActionPerformed
 
     private void registerTxtClickMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerTxtClickMouseClicked
