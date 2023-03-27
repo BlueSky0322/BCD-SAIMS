@@ -2,50 +2,62 @@ package BasicFunctions;
 
 import Blockchain.Block;
 import Blockchain.Blockchain;
-import Blockchain.StudentAcademicInfo;
+import Blockchain.AcademicInfoTranx;
 import ContentData.*;
 import Utils.FilePaths;
 import java.io.File;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 import org.javatuples.Quintet;
 
 public class AdminFunctions {
 
-    public static PersonalInfo pi;
-    public static AcademicTranscript at;
-    public static GraduationCert gc;
-    public static OutstandingPayments op;
-    public static TuitionPayments tp;
+    private static String masterFolder = "MasterBinary";
+//    public static PersonalInfo pi;
+//    public static AcademicTranscript at;
+//    public static GraduationCert gc;
+//    public static OutstandingPayments op;
+//    public static TuitionPayments tp;
+    private static AcademicInfoTranx studAcaInfoTranx = new AcademicInfoTranx();
 
-    public static void createRecord(PersonalInfo pi, AcademicTranscript at, GraduationCert gc, OutstandingPayments op, TuitionPayments tp) {
+    public static Quintet generateRecords(String ID) {
+        PersonalInfo pi = new PersonalInfo(ID);
+        AcademicTranscript at = new AcademicTranscript();
+        GraduationCert gc = new GraduationCert();
+        OutstandingPayments op = new OutstandingPayments();
+        TuitionPayments tp = new TuitionPayments(ID);
+
+        Quintet studAcaInfoQuintet = new Quintet<>(pi, at, gc, op, tp);
+        return studAcaInfoQuintet;
+    }
+
+    public static void createRecord(AcademicInfoTranx tranxList) {
         //File f = new File(FilePaths.getChainFilePath());
-        StudentAcademicInfo studAcainfo = new StudentAcademicInfo();
-        AdminFunctions.pi = pi;
-        AdminFunctions.at = at;
-        AdminFunctions.gc = gc;
-        AdminFunctions.op = op;
-        AdminFunctions.tp = tp;
-        Quintet studeAcaInfo = new Quintet<>(pi, at, gc, op, tp);
+        //StudentAcademicInfo studAcainfo = new AcademicInfoTranx();
+        AtomicBoolean hasGenesis = new AtomicBoolean(false);
+        Blockchain bc = Blockchain.getInstance(FilePaths.getChainFilePath());
+        //if (studAcainfo.checkAdd()) {
+        //Blockchain bc = Blockchain.getInstance(FilePaths.getChainFilePath());
 
-        if (studAcainfo.checkAdd(studeAcaInfo)) {
-            Blockchain bc = Blockchain.getInstance(FilePaths.getChainFilePath());
-            if (bc.getChain() == null) {
+        if (!hasGenesis.get()) {
+            if (!new File(masterFolder)
+                    .exists() || bc.getChain() == null) {
                 //creates new genesis block if the blockchain doesn't exist yet
                 System.err.println(">> Creating Blockchain genesis block!");
-                bc.genesis(studAcainfo);
+                //studAcainfo = new AcademicInfoTranx();
+                //studAcainfo.AddList(studeAcaInfo);
+                new File(masterFolder).mkdir();
+                bc.genesis();
+                hasGenesis.set(true);
             } else {
-                studAcainfo = new StudentAcademicInfo();
-                studAcainfo.AddList(studeAcaInfo);
-                Block previousBlock = bc.getChain().get(bc.getChain().size() - 1);
-                Block newBlock = new Block(previousBlock.getBlockHeader().getCurrentHash(), studAcainfo);
-                bc.nextBlock(newBlock);
-                bc.distribute();
+                hasGenesis.set(true);
             }
         }
+        Block previousBlock = bc.getChain().get(bc.getChain().size() - 1);
+        Block newBlock = new Block(previousBlock.getBlockHeader().getCurrentHash(), studAcaInfoTranx);
+        newBlock.setInfo(tranxList);
+        bc.nextBlock(newBlock);
+        bc.distribute();
 
-//        List<Block> bc = Blockchain.getChain();
-//        Block lastBlock = bc.get(bc.size() - 1);
-//        Block leftOut = new Block(lastBlock.getBlockHeader().getCurrentHash(), studAcainfo);
-//        Blockchain.nextBlock(leftOut);
     }
 }
