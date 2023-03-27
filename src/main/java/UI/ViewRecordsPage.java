@@ -9,7 +9,7 @@ import Actors.Student;
 import Actors.User;
 import BasicFunctions.AdminFunctions;
 import BasicFunctions.UserFunctions;
-import Blockchain.StudentAcademicInfo;
+import Blockchain.AcademicInfoTranx;
 import ContentData.*;
 import javax.swing.JOptionPane;
 
@@ -20,7 +20,7 @@ import javax.swing.JOptionPane;
 public class ViewRecordsPage extends javax.swing.JFrame {
 
     User user = new User();
-    StudentAcademicInfo matchingRecord = null;
+    AcademicInfoTranx matchingRecord = null;
 
     /**
      * Creates new form CreateRecords
