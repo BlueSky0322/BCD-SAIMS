@@ -7,8 +7,10 @@ package UI;
 import Actors.Admin;
 import Actors.User;
 import BasicFunctions.AdminFunctions;
+import Blockchain.AcademicInfoTranx;
 import ContentData.*;
 import javax.swing.JOptionPane;
+import org.javatuples.Quintet;
 
 /**
  *
@@ -16,19 +18,18 @@ import javax.swing.JOptionPane;
  */
 public class CreateRecordPage extends javax.swing.JFrame {
 
-    User user = new User();
-    PersonalInfo pi = null;
-    AcademicTranscript at = null;
-    GraduationCert gc = null;
-    OutstandingPayments op = null;
-    TuitionPayments tp = null;
-
+    private AcademicInfoTranx tranxList = new AcademicInfoTranx();
     /**
      * Creates new form CreateRecords
      */
     public CreateRecordPage() {
         initComponents();
         dataTextArea.setEditable(false);
+        dataTextArea.setText("");
+    }
+
+    public AcademicInfoTranx getTranxList() {
+        return tranxList;
     }
 
     /**
@@ -204,31 +205,18 @@ public class CreateRecordPage extends javax.swing.JFrame {
         if (ID.isBlank() || ID.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Some fields are blank.");
         } else {
-            dataTextArea.setText("");
-            this.pi = new PersonalInfo(ID);
-            this.at = new AcademicTranscript();
-            this.gc = new GraduationCert();
-            this.tp = new TuitionPayments(ID);
-            this.op = new OutstandingPayments();
-            dataTextArea.append(this.pi.toString());
-            dataTextArea.append(this.at.toString());
-            dataTextArea.append(this.gc.toString());
-            dataTextArea.append(this.tp.toString());
-            dataTextArea.append(this.op.toString());
-
+            Quintet studAcaInfoQuintet = AdminFunctions.generateRecords(ID);
+            getTranxList().AddList(studAcaInfoQuintet);
+            JOptionPane.showMessageDialog(this, "Data generated.");
+            dataTextArea.append("\n" + studAcaInfoQuintet.toString());
             studIDTextField.setText("");
         }
     }//GEN-LAST:event_genDataBtnActionPerformed
 
     private void addRecordBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addRecordBtnActionPerformed
         // TODO add your handling code here:
-        if (pi != null && at != null && gc != null && op != null && tp != null) {
-            AdminFunctions.createRecord(pi, at, gc, op, tp);
-            JOptionPane.showMessageDialog(this, "Record added into blockchain.");
-        } else {
-            JOptionPane.showMessageDialog(this, "Some items have not been generated.");
-        }
-
+        AdminFunctions.createRecord(getTranxList());
+        JOptionPane.showMessageDialog(this, "Record added into blockchain.");
     }//GEN-LAST:event_addRecordBtnActionPerformed
 
     private void cancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelBtnActionPerformed
