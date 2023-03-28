@@ -1,8 +1,6 @@
 package Blockchain;
 
 import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.security.SecureRandom;
 import Blockchain.Salt;
 import org.apache.commons.codec.binary.Hex;
 

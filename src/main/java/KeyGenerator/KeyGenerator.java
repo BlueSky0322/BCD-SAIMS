@@ -59,13 +59,15 @@ public class KeyGenerator {
     public static void writeKeyToFile(byte[] keyBytes, String path) {
         byte[] keyBytesCopy = Arrays.copyOf(keyBytes, keyBytes.length + 1);
         //append the copy with new line
-        System.arraycopy("\n".getBytes(), 0, keyBytesCopy, keyBytes.length, 1);
+        System.arraycopy("\n".getBytes(), 0, 
+                keyBytesCopy, keyBytes.length, 1);
         
         File f = new File(path);
         f.getParentFile().mkdirs();
 
         try {
-            Files.write(Paths.get(path), keyBytesCopy, StandardOpenOption.CREATE);
+            Files.write(Paths.get(path), 
+                    keyBytesCopy, StandardOpenOption.CREATE);
         } catch (Exception e) {
             e.printStackTrace();
         }

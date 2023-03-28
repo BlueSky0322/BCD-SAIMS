@@ -5,8 +5,6 @@
 package UI;
 
 import BasicFunctions.Auth;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicReference;
 import javax.swing.JOptionPane;
 
 /**

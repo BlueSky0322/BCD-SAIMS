@@ -9,9 +9,7 @@ import ContentData.OutstandingPayments;
 import ContentData.PersonalInfo;
 import ContentData.TuitionPayments;
 import Utils.FilePaths;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicBoolean;
 import org.javatuples.Quintet;
 
 public class UserFunctions {
@@ -39,5 +37,4 @@ public class UserFunctions {
         }
         return null;
     }
-
 }

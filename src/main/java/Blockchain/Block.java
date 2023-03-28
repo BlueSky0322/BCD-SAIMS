@@ -5,8 +5,6 @@ import Utils.Algorithms;
 import java.io.ByteArrayOutputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.sql.Timestamp;
-import java.util.Arrays;
 
 public class Block implements Serializable {
 
@@ -64,6 +62,7 @@ public class Block implements Serializable {
                     + timestamp + "]";
         }
     }
+    
     public AcademicInfoTranx transaction;
 
     public void setInfo(AcademicInfoTranx transaction) {
@@ -89,7 +88,10 @@ public class Block implements Serializable {
     }
 
     private byte[] getBytes() {
-        try (ByteArrayOutputStream byteStream = new ByteArrayOutputStream(); ObjectOutputStream out = new ObjectOutputStream(byteStream);) {
+        try (
+                ByteArrayOutputStream byteStream = new ByteArrayOutputStream(); 
+                ObjectOutputStream out = new ObjectOutputStream(byteStream);
+                ) {
             out.writeObject(this);
             return byteStream.toByteArray();
         } catch (Exception e) {

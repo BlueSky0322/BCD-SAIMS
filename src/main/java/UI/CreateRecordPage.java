@@ -5,10 +5,8 @@
 package UI;
 
 import Actors.Admin;
-import Actors.User;
 import BasicFunctions.AdminFunctions;
 import Blockchain.AcademicInfoTranx;
-import ContentData.*;
 import javax.swing.JOptionPane;
 import org.javatuples.Quintet;
 
@@ -19,6 +17,7 @@ import org.javatuples.Quintet;
 public class CreateRecordPage extends javax.swing.JFrame {
 
     private AcademicInfoTranx tranxList = new AcademicInfoTranx();
+
     /**
      * Creates new form CreateRecords
      */
@@ -207,8 +206,8 @@ public class CreateRecordPage extends javax.swing.JFrame {
         } else {
             Quintet studAcaInfoQuintet = AdminFunctions.generateRecords(ID);
             getTranxList().AddList(studAcaInfoQuintet);
-            JOptionPane.showMessageDialog(this, "Data generated.");
             dataTextArea.append("\n" + studAcaInfoQuintet.toString());
+            JOptionPane.showMessageDialog(this, "Data generated.");
             studIDTextField.setText("");
         }
     }//GEN-LAST:event_genDataBtnActionPerformed

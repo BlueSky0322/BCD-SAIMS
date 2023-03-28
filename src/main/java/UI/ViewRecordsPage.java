@@ -7,10 +7,8 @@ package UI;
 import Actors.Admin;
 import Actors.Student;
 import Actors.User;
-import BasicFunctions.AdminFunctions;
 import BasicFunctions.UserFunctions;
 import Blockchain.AcademicInfoTranx;
-import ContentData.*;
 import javax.swing.JOptionPane;
 
 /**

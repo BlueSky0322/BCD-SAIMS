@@ -9,9 +9,9 @@ package Actors;
  * @author ryann
  */
 public class User {
-    
+
     public User() {
-        
+
     }
-    
+
 }

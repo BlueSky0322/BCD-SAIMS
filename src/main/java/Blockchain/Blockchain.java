@@ -47,7 +47,8 @@ public class Blockchain {
     }
 
     public LinkedList<Block> getChain() {
-        try (FileInputStream fis = new FileInputStream(chainFile); ObjectInputStream in = new ObjectInputStream(fis);) {
+        try (
+                FileInputStream fis = new FileInputStream(chainFile); ObjectInputStream in = new ObjectInputStream(fis);) {
             return (LinkedList<Block>) in.readObject();
         } catch (Exception e) {
             e.printStackTrace();
@@ -55,8 +56,9 @@ public class Blockchain {
         }
     }
 
-    public static void persist() {
-        try (FileOutputStream fos = new FileOutputStream(chainFile); ObjectOutputStream out = new ObjectOutputStream(fos);) {
+    public void persist() {
+        try (
+                FileOutputStream fos = new FileOutputStream(chainFile); ObjectOutputStream out = new ObjectOutputStream(fos);) {
             out.writeObject(db);
             System.out.println(">> Master file updated");
         } catch (Exception e) {
@@ -64,12 +66,13 @@ public class Blockchain {
         }
     }
 
-    public static void distribute() {
+    public void distribute() {
         //convert chain to string using API
         String chain = new GsonBuilder().setPrettyPrinting().create().toJson(db);
         System.out.println(chain);
         try {
-            Files.write(Paths.get(ledgerFile), chain.getBytes(), StandardOpenOption.CREATE);
+            Files.write(Paths.get(ledgerFile), chain.getBytes(),
+                    StandardOpenOption.CREATE);
         } catch (Exception e) {
             e.printStackTrace();
         }

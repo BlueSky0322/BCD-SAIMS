@@ -10,7 +10,9 @@ import java.util.List;
 
 public class MerkleTree {
 
-    private List<Quintet<PersonalInfo, AcademicTranscript, GraduationCert, OutstandingPayments, TuitionPayments>> studAcaInfoList;
+    private List<
+            Quintet<
+            PersonalInfo, AcademicTranscript, GraduationCert, OutstandingPayments, TuitionPayments>> studAcaInfoList;
     private String merkleRoot = "0";
     private List<String> recordsHashListAsString = new LinkedList<>();
 
@@ -22,13 +24,17 @@ public class MerkleTree {
         return recordsHashListAsString;
     }
 
-    private MerkleTree(List<Quintet<PersonalInfo, AcademicTranscript, GraduationCert, OutstandingPayments, TuitionPayments>> recordList) {
+    private MerkleTree(
+            List<Quintet<
+                    PersonalInfo, AcademicTranscript, GraduationCert, OutstandingPayments, TuitionPayments>> recordList) {
         this.studAcaInfoList = recordList;
     }
 
     private static MerkleTree instance;
 
-    public static MerkleTree getInstance(List<Quintet<PersonalInfo, AcademicTranscript, GraduationCert, OutstandingPayments, TuitionPayments>> recordList) {
+    public static MerkleTree getInstance(
+            List<Quintet<
+                    PersonalInfo, AcademicTranscript, GraduationCert, OutstandingPayments, TuitionPayments>> recordList) {
         if (instance == null) {
             instance = new MerkleTree(recordList);
         }
@@ -36,33 +42,42 @@ public class MerkleTree {
     }
 
     public void build() {
-        List<Quintet<PersonalInfo, AcademicTranscript, GraduationCert, OutstandingPayments, TuitionPayments>> tempList = new ArrayList<>();
+        List<Quintet<
+                PersonalInfo, AcademicTranscript, GraduationCert, OutstandingPayments, TuitionPayments>> tempList = new ArrayList<>();
         for (Quintet data : this.studAcaInfoList) {
             tempList.add(data);
-            //System.out.println(data);
         }
         List<String> hashes = genRecordHashList(tempList);
-        //System.out.println("[BUILD] " + hashes.get(0));
         while (hashes.size() != 1) {
-            hashes = genRecordHashListAsString(hashes);            
+            hashes = genRecordHashListAsString(hashes);
         }
         this.merkleRoot = hashes.get(0);
         this.recordsHashListAsString = hashes;
     }
 
-    private List<String> genRecordHashList(List<Quintet<PersonalInfo, AcademicTranscript, GraduationCert, OutstandingPayments, TuitionPayments>> recordList) {
+    private List<String> genRecordHashList(
+            List<Quintet<
+                    PersonalInfo, AcademicTranscript, GraduationCert, OutstandingPayments, TuitionPayments>> recordList) {
         List<String> hashList = new ArrayList<>();
         int i = 0;
         while (i < recordList.size()) {
-            Quintet<PersonalInfo, AcademicTranscript, GraduationCert, OutstandingPayments, TuitionPayments> left = recordList.get(i); 
+            Quintet<
+                    PersonalInfo, AcademicTranscript, GraduationCert, OutstandingPayments, TuitionPayments> left = recordList.get(i);
             i++;
-            Quintet<PersonalInfo, AcademicTranscript, GraduationCert, OutstandingPayments, TuitionPayments> right;
+            Quintet<
+                    PersonalInfo, AcademicTranscript, GraduationCert, OutstandingPayments, TuitionPayments> right;
             String hashing;
             if (i != recordList.size()) {
                 right = recordList.get(i);
-                hashing = Hashing.hashContentData(left.add(right).toString().getBytes(), Algorithms.AlgoSHA256());
+                hashing = Hashing.
+                        hashContentData(left.add(right).
+                                toString().getBytes(),
+                                Algorithms.AlgoSHA256());
             } else {
-                hashing = Hashing.hashContentData(left.toString().getBytes(), Algorithms.AlgoSHA256());
+                hashing = Hashing.
+                        hashContentData(left.
+                                toString().getBytes(),
+                                Algorithms.AlgoSHA256());
             }
             hashList.add(hashing);
             i++;
@@ -80,7 +95,9 @@ public class MerkleTree {
             if (i != record.size()) {
                 right = record.get(i);
             }
-            String hashing = Hashing.hashContentData(left.concat(right).getBytes(), Algorithms.AlgoSHA256());
+            String hashing = Hashing.hashContentData(
+                    left.concat(right).getBytes(),
+                    Algorithms.AlgoSHA256());
             hashList.add(hashing);
             i++;
         }

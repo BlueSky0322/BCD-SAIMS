@@ -16,13 +16,6 @@ public class OutstandingPayments implements Serializable {
         this.paymentDeadline = "31/12/2023";
     }
 
-    public OutstandingPayments(double totalOutstandingAmount, double accumulatedPaid, String paymentDeadline) {
-        this.totalOutstandingAmount = totalOutstandingAmount;
-        this.accumulatedPaid = accumulatedPaid;
-        this.amountUnpaid = totalOutstandingAmount - accumulatedPaid;
-        this.paymentDeadline = paymentDeadline;
-    }
-
     public double getOutstandingAmount() {
         return totalOutstandingAmount;
     }

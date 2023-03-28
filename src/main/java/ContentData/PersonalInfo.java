@@ -16,26 +16,40 @@ public class PersonalInfo implements Serializable {
     private String studDOB; //Date of Birth
     private MaritalStatus studMaritalStat;
 
-    public PersonalInfo(String studID, String studName, Gender studGender, String studContactNo, String studAddress, String studEmail, String studDOB, MaritalStatus studMaritalStat) {
-        this.studID = studID;
-        this.studName = studName;
-        this.studGender = studGender;
-        this.studContactNo = studContactNo;
-        this.studAddress = studAddress;
-        this.studEmail = studEmail;
-        this.studDOB = studDOB;
-        this.studMaritalStat = studMaritalStat;
-    }
+    //used to generate random data
+    public PersonalInfo(String ID) {
+        this.studID = ID;
+        this.studName = "Student " + ID;
 
-    public PersonalInfo() {
-        studID = "TP061914";
-        studName = "John Doe";
-        studGender = Gender.MALE;
-        studContactNo = "0123456789";
-        studAddress = "PJ";
-        studEmail = "johndoe123@email.com";
-        studDOB = "3/3/23";
-        studMaritalStat = MaritalStatus.SINGLE;
+        // randomly assign gender
+        Random random = new Random();
+        if (random.nextInt(2) == 1) {
+            studGender = Gender.MALE;
+        } else {
+            studGender = Gender.FEMALE;
+        }
+
+        // generate a random 10 digit Malaysian phone number
+        StringBuilder sb = new StringBuilder();
+        sb.append("01");
+        for (int i = 0; i < 8; i++) {
+            sb.append(random.nextInt(10));
+        }
+        studContactNo = sb.toString();
+
+        //randomly assign address
+        String[] klDistricts = {"Cheras", "Kepong", "Segambut", "Setapak", "Wangsa Maju"};
+        studAddress = klDistricts[random.nextInt(klDistricts.length)];
+
+        studEmail = ID + "@gmail.com";
+        studDOB = "22/3/23";
+
+        // randomly assign marital status
+        if (random.nextInt(2) == 1) {
+            studMaritalStat = MaritalStatus.MARRIED;
+        } else {
+            studMaritalStat = MaritalStatus.SINGLE;
+        }
     }
 
     public String getID() {
@@ -68,42 +82,6 @@ public class PersonalInfo implements Serializable {
 
     public MaritalStatus getMarital() {
         return studMaritalStat;
-    }
-
-    //used to generate random data
-    public PersonalInfo(String ID) {
-        this.studID = ID;
-        this.studName = "Student " + ID;
-        
-        // randomly assign gender
-        Random random = new Random();
-        if (random.nextInt(2) == 1) {
-            studGender = Gender.MALE;
-        } else {
-            studGender = Gender.FEMALE;
-        }
-        
-        // generate a random 10 digit Malaysian phone number
-        StringBuilder sb = new StringBuilder();
-        sb.append("01");
-        for (int i = 0; i < 8; i++) {
-            sb.append(random.nextInt(10));
-        }
-        studContactNo = sb.toString();
-        
-        //randomly assign address
-        String[] klDistricts = {"Cheras", "Kepong", "Segambut", "Setapak", "Wangsa Maju"};
-        studAddress = klDistricts[random.nextInt(klDistricts.length)];
-        
-        studEmail = ID + "@gmail.com";
-        studDOB = "22/3/23";
-        
-        // randomly assign marital status
-        if (random.nextInt(2) == 1) {
-            studMaritalStat = MaritalStatus.MARRIED;
-        } else {
-            studMaritalStat = MaritalStatus.SINGLE;
-        }
     }
 
     @Override

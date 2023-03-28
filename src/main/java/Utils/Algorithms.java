@@ -1,7 +1,5 @@
 package Utils;
 
-import java.awt.Toolkit;
-
 public class Algorithms {
 
     private static final String SHA256 = "SHA-256";

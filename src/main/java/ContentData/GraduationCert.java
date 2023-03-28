@@ -8,12 +8,6 @@ public class GraduationCert implements Serializable {
     private final String classHonours;
     private final String CGPA;
 
-    public GraduationCert(String degreeType, String classHonours, String CGPA) {
-        this.degreeType = degreeType;
-        this.classHonours = classHonours;
-        this.CGPA = CGPA;
-    }
-
     public GraduationCert() {
         degreeType = "Bachelors Degree for Computer Science";
         classHonours = "First Class";

@@ -11,9 +11,6 @@ import java.io.FileReader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JTextField;
 
 public class Auth {
 
@@ -30,7 +27,6 @@ public class Auth {
             while (retrievedLine != null) {
                 if (ASYMMETRIC.decrypt(retrievedLine, KeyAccess.getPrivateKey()).equals(email)) {
                     signature = DIGITAL_SIGNATURE.signIn(email);
-                    //System.out.println("Auth Email: " + email + "\nAuth Signature: " + signature);
                     return true;
                 }
                 retrievedLine = br.readLine();
@@ -44,26 +40,28 @@ public class Auth {
 
     public static boolean register(String email) {
         try {
-
             File f = new File(CREDENTIAL_PATH);
             BufferedReader br = new BufferedReader(new FileReader(f));
             String checkLine = br.readLine();
             while (checkLine != null) {
-                if (ASYMMETRIC.decrypt(checkLine, KeyAccess.getPrivateKey()).equals(email)) {
-                    //JOptionPane.showMessageDialog(null,"This is a registered email\nDirecting to Login Page!");
-                    //System.out.println(false);
+                if (ASYMMETRIC.decrypt(
+                        checkLine,
+                        KeyAccess.getPrivateKey()).equals(email)) {
                     return false;
                 }
                 checkLine = br.readLine();
             }
             String cipherText = ASYMMETRIC.encrypt(email, KeyAccess.getPublicKey());
             if (f.exists()) {
-                Files.writeString(Paths.get(CREDENTIAL_PATH), cipherText + "\n", StandardOpenOption.APPEND);
+                Files.writeString(
+                        Paths.get(CREDENTIAL_PATH),
+                        cipherText + "\n", StandardOpenOption.APPEND);
             } else {
-                Files.writeString(Paths.get(CREDENTIAL_PATH), cipherText + "\n", StandardOpenOption.CREATE);
+                Files.writeString(
+                        Paths.get(CREDENTIAL_PATH),
+                        cipherText + "\n", StandardOpenOption.CREATE);
             }
             return true;
-            //JOptionPane.showMessageDialog(null,"Email registered successfully.\nDirecting to Login Page");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -72,7 +70,6 @@ public class Auth {
 
     public static boolean verifyEmail(String email, String sign) {
         try {
-            //System.out.println("Auth class verify: " + DIGITAL_SIGNATURE.DSverify(email, sign));
             return DIGITAL_SIGNATURE.DSverify(email, sign);
         } catch (Exception ex) {
             ex.printStackTrace();

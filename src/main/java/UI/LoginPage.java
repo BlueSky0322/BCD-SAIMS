@@ -6,13 +6,9 @@ package UI;
 
 import Actors.Admin;
 import Actors.Student;
-import Actors.User;
 import BasicFunctions.Auth;
-import SignatureSign.DigitalSignature;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -165,23 +161,17 @@ public class LoginPage extends javax.swing.JFrame {
         if (!userEmail.isBlank() || !userEmail.isEmpty()) {
             if (!isValid.get()) {
                 email.set(userEmail);
-                //System.out.println("atomicEmail " + email.get() + "\n email: " + userEmail);
                 isValid.set(Auth.login(userEmail));
                 emailTxtField.setText(Auth.getSignature());
             } else {
-                //System.out.println("atomicEmail " + email.get() + "\n email: " + userEmail + "\n" + emailTxtField.getText());
-                //System.out.println("UI: " + DigitalSignature.DSverify(email.get(), Auth.getSignature()));
                 boolean validEmail = Auth.verifyEmail(email.get(), emailTxtField.getText());
                 //System.out.println("UI: " + validEmail);
                 if (validEmail) {
-                    //System.out.println("UI: " + Auth.verifyEmail(email.get(), emailTxtField.getText()));
                     JOptionPane.showMessageDialog(this, "User has succesfully logged in!\nWelcome back, " + email.get());
                     if (email.get().startsWith("admin")) {
-                        //System.out.println("admin");
                         new MainMenu(new Admin()).setVisible(true);
                         dispose();
                     } else {
-                        //System.out.println("student");
                         new MainMenu(new Student()).setVisible(true);
                         dispose();
                     }

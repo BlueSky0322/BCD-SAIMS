@@ -12,6 +12,9 @@ public class AcademicInfoTranx implements Serializable {
     public static final int SIZE = 30;
     public String merkleRoot;
     private List<String> hashList = new ArrayList<>();
+    private List<
+            Quintet<
+            PersonalInfo, AcademicTranscript, GraduationCert, OutstandingPayments, TuitionPayments>> studentAcademicInformation;
 
     public AcademicInfoTranx() {
         studentAcademicInformation = new ArrayList<>(SIZE);
@@ -25,17 +28,24 @@ public class AcademicInfoTranx implements Serializable {
         this.merkleRoot = merkleRoot;
     }
 
-    public void buildAndSetMerkleRoot(List<Quintet<PersonalInfo, AcademicTranscript, GraduationCert, OutstandingPayments, TuitionPayments>> recordList) {
+    public List<
+        Quintet<
+        PersonalInfo, AcademicTranscript, GraduationCert, OutstandingPayments, TuitionPayments>>
+            getRecordList() {
+        return studentAcademicInformation;
+    }
+
+    public List<String> getHashes() {
+        return hashList;
+    }
+
+    public void buildAndSetMerkleRoot(
+            List<Quintet<
+                    PersonalInfo, AcademicTranscript, GraduationCert, OutstandingPayments, TuitionPayments>> recordList) {
         MerkleTree mt = MerkleTree.getInstance(recordList);
         mt.build();
         this.merkleRoot = mt.getMerkleRoot();
         this.hashList = mt.getRecordHashList();
-    }
-
-    private List<Quintet<PersonalInfo, AcademicTranscript, GraduationCert, OutstandingPayments, TuitionPayments>> studentAcademicInformation;
-
-    public List<Quintet<PersonalInfo, AcademicTranscript, GraduationCert, OutstandingPayments, TuitionPayments>> getRecordList() {
-        return studentAcademicInformation;
     }
 
     public void AddList(Quintet recordToAdd) {
@@ -45,12 +55,12 @@ public class AcademicInfoTranx implements Serializable {
         }
     }
 
-    public List<String> getHashes() {
-        return hashList;
-    }
-
     @Override
     public String toString() {
-        return "Student Record [merkleroot = " + merkleRoot + ", recordList = " + studentAcademicInformation + "]";
+        return "Student Record "
+                + "[merkleroot = "
+                + merkleRoot
+                + ", recordList = "
+                + studentAcademicInformation + "]";
     }
 }

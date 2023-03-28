@@ -4,7 +4,6 @@
  */
 package Main;
 
-import UI.CreateRecordPage;
 import UI.LoginPage;
 import Utils.FilePaths;
 import java.io.File;
@@ -13,6 +12,9 @@ import java.io.IOException;
 /**
  *
  * @author ryann
+ * code available on GitHub:
+ * https://github.com/BlueSky0322/BCD-SAIMS
+ *
  */
 public class App {
 
@@ -49,8 +51,5 @@ public class App {
 
         LoginPage lp = new LoginPage();
         lp.setVisible(true);
-
-//        CreateRecordPage cr = new CreateRecordPage();
-//        cr.setVisible(true);
     }
 }

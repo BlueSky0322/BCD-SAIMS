@@ -6,7 +6,6 @@ import Blockchain.AcademicInfoTranx;
 import ContentData.*;
 import Utils.FilePaths;
 import java.io.File;
-import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.javatuples.Quintet;
 
@@ -35,8 +34,6 @@ public class AdminFunctions {
                     .exists() || bc.getChain() == null) {
                 //creates new genesis block if the blockchain doesn't exist yet
                 System.err.println(">> Creating Blockchain genesis block!");
-                //studAcainfo = new AcademicInfoTranx();
-                //studAcainfo.AddList(studeAcaInfo);
                 new File(masterFolder).mkdir();
                 bc.genesis();
                 hasGenesis.set(true);
@@ -45,10 +42,11 @@ public class AdminFunctions {
             }
         }
         Block previousBlock = bc.getChain().get(bc.getChain().size() - 1);
-        Block newBlock = new Block(previousBlock.getBlockHeader().getCurrentHash(), studAcaInfoTranx);
+        Block newBlock = new Block(
+                previousBlock.getBlockHeader().getCurrentHash(),
+                studAcaInfoTranx);
         newBlock.setInfo(tranxList);
         bc.nextBlock(newBlock);
         bc.distribute();
-
     }
 }
