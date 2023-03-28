@@ -6,6 +6,8 @@ package UI;
 
 import Actors.Admin;
 import Actors.User;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 
 /**
  *
@@ -43,6 +45,11 @@ public class MainMenu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(400, 293));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
@@ -154,6 +161,18 @@ public class MainMenu extends javax.swing.JFrame {
         new CreateRecordPage().setVisible(true);
         dispose();
     }//GEN-LAST:event_createRecordBtnActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+
+        // Calculate the position of the form
+        int x = (screenSize.width - this.getWidth()) / 2;
+        int y = (screenSize.height - this.getHeight()) / 2;
+
+        // Set the position of the form
+        this.setLocation(x, y);
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
